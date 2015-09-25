@@ -36,9 +36,9 @@ These models may be selected using the trainer's model selector button.
 
 The trainer creates trial samples by first selecting n independently chosen values of $X$ where $X$ is uniformly distributed over its minimum and maximum values and then performs a sub-randomization based on the selected log odds equation to choose between the two alternatives.
 
-For example, suppose the polynomial model is active and that $\min X$ and $\max X$ are 1 and 3 respectively, with the sample size set to 100. The trainer then generates 100 $x_i$ values uniformly generated over the interval [1, 3], and then does a coin toss with probability of heads is given by $prob(\rho(x_i))$.
+For example, suppose the polynomial model is active and that $\min X$ and $\max X$ are 1 and 3 respectively, with the sample size set to 100. The trainer then generates 100 $x_i$ values uniformly generated over the interval [1, 3], and then does a coin toss with probability of heads is given by $prob(\rho(x_i))$ where $\rho(x_i) = -2  + 0.5x_i + 0.1 x_i^2$.
 
-Results are presented as either the probability curves or log odd curves that are sub-labelled with lines indicating estimated coefficient values and the actual coefficients.
+Results are presented as either the probability curves or log odd curves that are sub-labelled with legends indicating estimated coefficient values and the actual coefficients.
 
 The polynomial model was chosen to provide the user with some feel for how closely correlated covariates can be rather insensitive to the estimated regression coefficients relative to its probability outputs (see suggested experiment **I**). In contrast the harmonic model components are comparatively
 orthogonal showing less sensitivity to varying $X$'s minimum and maximum values (see experiment **II**).
@@ -46,6 +46,7 @@ orthogonal showing less sensitivity to varying $X$'s minimum and maximum values 
 ## Running an Experiment
 To run a logistical regression trainer experiment one sets the sample size, the model type, min X, max X, seed and graph type corresponding to
 input fields A-F, and then depresses the submit button G. The default setting for inputs A-F correspond to suggested experiment <b>I</b> given in the next section (see the graphic entitled "Trainer Input Controls" for additional details)
+
 ### Suggested Experiments
 
 <table border="1" style="width:100%">
